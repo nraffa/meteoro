@@ -5,6 +5,8 @@ import Home from '../../screens/Home';
 import Chat from '../../screens/Chat';
 import Favourites from '../../screens/Favourites';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
@@ -21,10 +23,43 @@ const FavouritesScreen = () => {
 
 const App = () => {
     return (
-        <Tab.Navigator>
-            <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Chat" component={ChatScreen} />
-            <Tab.Screen name="Favourites" component={FavouritesScreen} />
+        <Tab.Navigator
+            screenOptions={{
+                tabBarActiveTintColor: '#323431',
+                tabBarInactiveTintColor: '#ccc',
+            }}
+        >
+            <Tab.Screen
+                name="Home"
+                component={HomeScreen}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="home" color={color} size={size} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Chat"
+                component={ChatScreen}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons
+                            name="chatbubble-outline"
+                            color={color}
+                            size={size}
+                        />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Favourites"
+                component={FavouritesScreen}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="heart" color={color} size={size} />
+                    ),
+                }}
+            />
         </Tab.Navigator>
     );
 };
