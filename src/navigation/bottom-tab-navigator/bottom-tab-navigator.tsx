@@ -36,6 +36,7 @@ const App = () => {
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="home" color={color} size={size} />
                     ),
+                    headerShown: false,
                 }}
             />
             <Tab.Screen
