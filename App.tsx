@@ -1,8 +1,13 @@
-import Map from './components/map/home-map';
 import React from 'react';
-
-console.log('App.js');
+import { View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import BottomNavigation from './src/navigation/bottom-tab-navigator/bottom-tab-navigator';
 
 export default function App() {
-    return <Map />;
+    return (
+        <View style={{ flex: 1 }}>
+            <StatusBar style="auto" />
+            <BottomNavigation />
+        </View>
+    );
 }
